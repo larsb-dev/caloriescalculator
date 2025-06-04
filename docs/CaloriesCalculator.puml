@@ -1,0 +1,52 @@
+@startuml
+!theme plain
+hide circle
+hide empty attributes
+hide empty methods
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+title CaloriesCalculator
+
+interface Calculator {
+    + double calculate(Person person)
+}
+
+class CaloriesCalculator {
+    + double calculate(Person person)
+}
+
+class Person {
+    - String name
+    - Sex sex
+    - int weight
+    - int height
+    - int birthYear
+    - int age
+    - double dailyCalories
+    - ActivityLevel activityLevel
+    Person(String name, Sex sex, int weight, int height, int birthYear)
+    - calcAge()
+    + getDailyCalories()
+}
+
+enum ActivityLevel <<enumeration>> {
+    SEDENTARY
+    LIGHTLY_ACTIVE
+    MODERATELY_ACTIVE
+    VERY_ACTIVE
+    - double multiplier
+    ActivityLevel(double multiplier)
+    + getMultiplier()
+}
+
+enum Sex <<enumeration>> {
+    MALE
+    FEMALE
+}
+
+Calculator <|.. CaloriesCalculator
+
+ActivityLevel <-- Person
+Sex <-- Person
+@enduml
