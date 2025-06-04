@@ -13,6 +13,13 @@ public class Person {
     private ActivityLevel activityLevel = ActivityLevel.MODERATELY_ACTIVE;
 
     public Person(String name, Sex sex, int weight, int height, int birthYear) {
+        if (birthYear > Year.now().getValue()) {
+            throw new IllegalArgumentException("Cannot be born yet");
+        }
+        if (height < 120) {
+            throw new IllegalArgumentException("Must be at least 120 cm tall");
+        }
+
         this.name = name;
         this.sex = sex;
         this.weight = weight;
@@ -61,5 +68,19 @@ public class Person {
 
     public void setActivityLevel(ActivityLevel activityLevel) {
         this.activityLevel = activityLevel;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", sex=" + sex +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", birthYear=" + birthYear +
+                ", age=" + age +
+                ", dailyCalories=" + dailyCalories +
+                ", activityLevel=" + activityLevel +
+                '}';
     }
 }

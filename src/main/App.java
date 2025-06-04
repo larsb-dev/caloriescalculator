@@ -6,9 +6,11 @@ public class App {
             Person person = new Person("Lars", Sex.MALE, 90, 190, 1999);
             Calculator calculator = new CaloriesCalculator();
             person.setDailyCalories(calculator.calculate(person));
-            System.out.println(String.format("%s, your daily calories are %.2f calories.", person.getName(), person.getDailyCalories()));
-        } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(person);
+        } catch (IllegalArgumentException illegalArgumentException) {
+            System.err.println("IllegalArgumentException: " + illegalArgumentException.getMessage());
+        } catch (Exception exception) {
+            System.err.println("Exception" + exception.getMessage());
         }
     }
 }
