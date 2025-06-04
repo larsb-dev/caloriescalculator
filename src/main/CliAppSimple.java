@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.Year;
 
+import static main.InputUtils.*;
+
 public class CliAppSimple {
     public static void main(String[] args) throws IOException {
         boolean isValid = false;
@@ -49,6 +51,7 @@ public class CliAppSimple {
                 }
 
                 isValid = true;
+                bufferedReader.close();
 
                 Person person = new Person(name, sex, weight, height, birthYear);
                 Calculator calculator = new CaloriesCalculator();
@@ -62,13 +65,5 @@ public class CliAppSimple {
                 System.err.println("Not a valid argument — " + illegalArgumentException.getMessage());
             }
         } while (!isValid);
-    }
-
-    public static String formatString(String userInput) {
-        return userInput.replaceAll("\\s+", "").trim();
-    }
-
-    public static boolean checkNegativeNumber(int userInput) {
-        return userInput < 0;
     }
 }
