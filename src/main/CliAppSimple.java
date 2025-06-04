@@ -26,7 +26,7 @@ public class CliAppSimple {
                 System.out.println("Please enter your sex: [male,female]");
                 Sex sex = Sex.valueOf(formatString(bufferedReader.readLine()).toUpperCase());
 
-                System.out.println("Please enter your weight:");
+                System.out.println("Please enter your weight in kg:");
                 int weight = Integer.parseInt(formatString(bufferedReader.readLine()));
 
                 if (checkNegativeNumber(weight)) {
@@ -34,11 +34,11 @@ public class CliAppSimple {
                     continue;
                 }
 
-                System.out.println("Please enter your height:");
+                System.out.println("Please enter your height in cm:");
                 int height = Integer.parseInt(formatString(bufferedReader.readLine()));
 
-                if (checkNegativeNumber(height)) {
-                    System.err.println("Not a valid height — cannot be negative");
+                if (height < 120) {
+                    System.err.println("Not a valid height — must be at least 120 cm tall");
                     continue;
                 }
 
