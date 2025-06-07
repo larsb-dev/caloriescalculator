@@ -4,15 +4,11 @@
 
 This is **my very first simple Java CLI Tool** as part of my Backend x DevOps journey. Its purpose is straightforward — calculate a person's _Total Daily Energy Expenditure (TDEE)_.
 
----
-
 ## How it works
 
 After running the app, the user is prompted to type their name, sex, weight, height, birth year and activity level into the CLI. Once the user inputs are all validated, they are used as arguments to instantiate a Person object.
 
 The Person object is then passed as an argument to a previously instantiated CaloriesCalculator object, whose `calculate()` method returns the user's TDEE. The value is stored in the Person object.
-
----
 
 ## Algorithm to calculate calories
 
@@ -42,7 +38,7 @@ For women:
 The activity level determines how active a person is in their day-to-day life:
 
 | **Level**         | **Description**                   | **Multiplier** |
-| ----------------- | --------------------------------- | -------------- |
+|  |   |
 | Sedentary         | Little to no exercise             | 1.2            |
 | Lightly Active    | Light exercise (1–3 days/week)    | 1.375          |
 | Moderately Active | Moderate exercise (3–5 days/week) | 1.55           |
@@ -73,8 +69,6 @@ public double calculate(Person person) {
 }
 ```
 
----
-
 ## App Design
 
 Before building the application I designed it in a UML class diagram. The application uses an object oriented programming (OOP) programming paradigm.
@@ -90,8 +84,6 @@ person.setDailyMacros(calculator.calculate(person));
 
 If I'd create a Calculator interface, this is how I could use polymorphism to add a new feature to also calculate the macros. However, I'm not entirely sure it would work as expected, since the MacrosCalculator would likely return an array or list of macros — grams of carbs, protein, and fat, rather than a single integer. The method signature must be the same for all classes who implement the interface.
 
----
-
 ## I have used AI to...
 
 - learn how to calculate the calories and how the formulas work
@@ -99,8 +91,6 @@ If I'd create a Calculator interface, this is how I could use polymorphism to ad
 - learn more about the GitHub workflow — for example, start by creating a dev branch from the main branch. Then, create individual feature, refactor or bug-fix branches from the dev branch. Once each of them is complete, merge them back into the dev branch periodically. After all changes have been tested and reviewed, merge the dev branch into the main branch for release. This approach ensures the main branch is always functional.
 - generate a regex expression `[A-Za-z]+` to check if the name contains one or more letters
 - assist me in implementing the aliases for my enum class ActivityLevel and learn about the `values()` method
-
----
 
 ## Learnings
 
@@ -110,16 +100,12 @@ I've used GitKraken for the first time while working on this project. I find it 
 
 ![GitKraken.png](docs/GitKraken.png)
 
----
-
 ## Possible Future Improvements
 
 - Add the option to choose caloric deficit or surplus depending on weight goal
 - Test the app with unit tests
 - Deploy the app to run inside a Docker container in the cloud
 - Add a more advanced CLI tool with [picocli](https://picocli.info/)
-
----
 
 ## Resources
 
