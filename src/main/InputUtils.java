@@ -23,10 +23,10 @@ public class InputUtils {
         return userInput >= 120;
     }
 
-    public static ActivityLevel fromAlias(String alias) {
+    public static ActivityLevel fromAlias(String userInput) {
         for (ActivityLevel activityLevel : ActivityLevel.values()) {
-            for (String a : activityLevel.getAliases()) {
-                if (a.equalsIgnoreCase(alias)) {
+            for (String alias : activityLevel.getAliases()) {
+                if (alias.equalsIgnoreCase(userInput)) {
                     return activityLevel;
                 }
             }
