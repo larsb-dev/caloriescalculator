@@ -1,7 +1,6 @@
 package main;
 
-public class CaloriesCalculator implements Calculator {
-    @Override
+public class CaloriesCalculator  {
     public double calculate(Person person) {
         double bmr;
         if (person.getSex() == Sex.MALE) {
