@@ -5,6 +5,7 @@ hide empty attributes
 hide empty methods
 skinparam classAttributeIconSize 0
 top to bottom direction
+'scale 2
 
 title CaloriesCalculator
 
@@ -21,7 +22,7 @@ class Person {
     - int age
     - double dailyCalories
     - ActivityLevel activityLevel
-    Person(String name, Sex sex, int weight, int height, int birthYear)
+    Person(String name, Sex sex, int weight, int height, int birthYear, ActivityLevel activityLevel)
     - calcAge()
     + getDailyCalories()
 }
@@ -32,8 +33,10 @@ enum ActivityLevel <<enumeration>> {
     MODERATELY_ACTIVE
     VERY_ACTIVE
     - double multiplier
-    ActivityLevel(double multiplier)
+    - String[] aliases
+    ActivityLevel(double multiplier, String[] aliases)
     + getMultiplier()
+    + getAliases()
 }
 
 enum Sex <<enumeration>> {
