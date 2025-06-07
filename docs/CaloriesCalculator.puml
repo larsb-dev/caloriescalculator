@@ -8,10 +8,6 @@ top to bottom direction
 
 title CaloriesCalculator
 
-interface Calculator {
-    + double calculate(Person person)
-}
-
 class CaloriesCalculator {
     + double calculate(Person person)
 }
@@ -44,8 +40,6 @@ enum Sex <<enumeration>> {
     MALE
     FEMALE
 }
-
-Calculator <|.. CaloriesCalculator
 
 ActivityLevel <-- Person
 Sex <-- Person

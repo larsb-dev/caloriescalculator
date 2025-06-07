@@ -2,7 +2,8 @@ package main;
 
 import java.time.Year;
 
-import static main.InputUtils.checkNegativeNumber;
+import static main.InputUtils.checkBirthYear;
+import static main.InputUtils.checkHeight;
 
 public class Person {
     private String name = "";
@@ -15,10 +16,10 @@ public class Person {
     private ActivityLevel activityLevel = ActivityLevel.MODERATELY_ACTIVE;
 
     public Person(String name, Sex sex, int weight, int height, int birthYear) {
-        if (checkNegativeNumber(birthYear) || birthYear > Year.now().getValue()) {
-            throw new IllegalArgumentException("Not a valid birth year — cannot be negative or in the future");
+        if (!checkBirthYear(birthYear)) {
+            throw new IllegalArgumentException("Not a valid birth year — cannot be more more than 100 years old or in the future");
         }
-        if (height < 120) {
+        if (!checkHeight(height)) {
             throw new IllegalArgumentException("Not a valid height — must be at least 120 cm tall");
         }
 
