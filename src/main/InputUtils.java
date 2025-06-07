@@ -23,6 +23,17 @@ public class InputUtils {
         return userInput >= 120;
     }
 
+    public static ActivityLevel fromAlias(String alias) {
+        for (ActivityLevel activityLevel : ActivityLevel.values()) {
+            for (String a : activityLevel.getAliases()) {
+                if (a.equalsIgnoreCase(alias)) {
+                    return activityLevel;
+                }
+            }
+        }
+        return null;
+    }
+
     public static boolean checkBirthYear(int userInput) {
         return userInput >= Year.now().getValue() - 100 && userInput <= Year.now().getValue();
     }

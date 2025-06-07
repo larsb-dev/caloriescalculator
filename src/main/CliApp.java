@@ -81,9 +81,25 @@ public class CliApp {
                 }
             }
 
+            String alias;
+            ActivityLevel activityLevel;
+
+            while (true) {
+                System.out.println("Please enter your activity level: [low, light, moderate, high]");
+
+                alias = formatString(bufferedReader.readLine());
+                activityLevel = fromAlias(alias);
+
+                if (activityLevel != null) {
+                    break;
+                } else {
+                    System.err.println("Not a valid activity level — allowed activity levels: [low, light, moderate, high]");
+                }
+            }
+
             bufferedReader.close();
 
-            Person person = new Person(name, sex, weight, height, birthYear);
+            Person person = new Person(name, sex, weight, height, birthYear, activityLevel);
             person.setDailyCalories(caloriesCalculator.calculate(person));
 
             System.out.println(person);

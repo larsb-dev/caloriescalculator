@@ -15,7 +15,7 @@ public class Person {
     private double dailyCalories = 0;
     private ActivityLevel activityLevel = ActivityLevel.MODERATELY_ACTIVE;
 
-    public Person(String name, Sex sex, int weight, int height, int birthYear) {
+    public Person(String name, Sex sex, int weight, int height, int birthYear, ActivityLevel activityLevel) {
         if (!checkBirthYear(birthYear)) {
             throw new IllegalArgumentException("Not a valid birth year — cannot be more more than 100 years old or in the future");
         }
@@ -28,6 +28,7 @@ public class Person {
         this.weight = weight;
         this.height = height;
         this.birthYear = birthYear;
+        this.activityLevel = activityLevel;
 
         calcAge(birthYear);
     }
