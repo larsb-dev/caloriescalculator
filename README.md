@@ -38,7 +38,7 @@ For women:
 The activity level determines how active a person is in their day-to-day life:
 
 | **Level**         | **Description**                   | **Multiplier** |
-|  |   |
+|-------------------|-----------------------------------|----------------|
 | Sedentary         | Little to no exercise             | 1.2            |
 | Lightly Active    | Light exercise (1–3 days/week)    | 1.375          |
 | Moderately Active | Moderate exercise (3–5 days/week) | 1.55           |
